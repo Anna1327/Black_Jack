@@ -1,5 +1,4 @@
 require_relative 'hand'
-
 class Player
   attr_reader :name, :bank, :hand
 

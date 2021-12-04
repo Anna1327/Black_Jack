@@ -1,4 +1,6 @@
+require_relative 'score'
 class Hand
+  include Score
 
   def initialize
     @cards = []
