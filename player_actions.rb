@@ -2,23 +2,23 @@ require_relative 'score'
 require_relative 'player'
 require_relative 'card'
 
-class PlayerActions
-  include Score
-
+module PlayerActions
   def initialize(player)
     @player = player
     @cards = player.cards
   end
 
-  def take(card)
-    @cards.push(card) unless @cards.size == 3
+  private
+
+  def take
+    @player.hand.take(@game_deck.card)
   end
 
   def pass
-    # do nothing 
+    # do nothing
   end
 
   def open
-    @cards.map { |_| '*' }.join(' ')
+    @player.hand.open
   end
 end

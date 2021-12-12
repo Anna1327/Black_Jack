@@ -4,7 +4,7 @@ class GameDeck
   attr_reader :cards
 
   def initialize
-    @cards = '2,3,4,5,6,7,8,9,10,J,Q,K,A'.split(",").product('♥♠♣♦'.chars).map { |number, suit| Card.new(number, suit) }
+    @cards = '23456789TJQKA'.chars.product('♥♠♣♦'.chars).map { |value, suit| Card.new(value, suit) }
   end
 
   def shuffle!
